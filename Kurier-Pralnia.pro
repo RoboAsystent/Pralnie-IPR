@@ -12,15 +12,18 @@ SOURCES += \
     authorization.cpp \
     main.cpp \
     loginwidget.cpp \
+    menuwidget.cpp \
     servercaller.cpp
 
 HEADERS += \
     authorization.h \
     loginwidget.h \
+    menuwidget.h \
     servercaller.h
 
 FORMS += \
-    loginwidget.ui
+    loginwidget.ui \
+    menu.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

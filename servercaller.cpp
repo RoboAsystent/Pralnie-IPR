@@ -17,15 +17,15 @@ void ServerCaller::doAuthorize(QString username, QString password)
     {
         auth = new Authorization;
         QObject::connect(this, &ServerCaller::checkIfValidUser, auth, &Authorization::pretendAuthorization);
-        emit checkIfValidUser(username, password);
+        QObject::connect(auth, &Authorization::IsUserValid, this, &ServerCaller::userIsValid);
     }
-    else
-    {
-
-    }
+    emit checkIfValidUser(username, password);
 }
 
-void ServerCaller::userIsValid(bool state, int key)
+void ServerCaller::userIsValid(bool state)
 {
-
+    if (state)
+        emit AuthorizationCompleted(1);
+    else
+        emit AuthorizationCompleted(-1);
 }

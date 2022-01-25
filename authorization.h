@@ -10,8 +10,7 @@ public:
     explicit Authorization(QObject *parent = nullptr);
 
 signals:
-    void userIsValid(bool state,int key);
-    void userIsInvalid(bool state = false, int key = 0);
+    void IsUserValid(bool state);
 
 public slots:
     void pretendAuthorization(QString username, QString password);

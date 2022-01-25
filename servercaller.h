@@ -16,9 +16,10 @@ public:
 
 signals:
     void checkIfValidUser(QString username, QString password);
+    void AuthorizationCompleted(int result);
 
 public slots:
-    void userIsValid(bool state, int key);
+    void userIsValid(bool state);
 
 
 private:
