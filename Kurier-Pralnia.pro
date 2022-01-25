@@ -9,11 +9,15 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    authorization.cpp \
     main.cpp \
-    loginwidget.cpp
+    loginwidget.cpp \
+    servercaller.cpp
 
 HEADERS += \
-    loginwidget.h
+    authorization.h \
+    loginwidget.h \
+    servercaller.h
 
 FORMS += \
     loginwidget.ui

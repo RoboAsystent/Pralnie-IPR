@@ -2,6 +2,9 @@
 #define LOGINWIDGET_H
 
 #include <QWidget>
+#include "servercaller.h"
+
+class ServerCaller;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LoginWidget; }
@@ -15,7 +18,11 @@ public:
     LoginWidget(QWidget *parent = nullptr);
     ~LoginWidget();
 
+private slots:
+    void on_LogIn_clicked();
+
 private:
     Ui::LoginWidget *ui;
+    ServerCaller *s_caller = nullptr;
 };
 #endif // LOGINWIDGET_H
