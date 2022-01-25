@@ -14,6 +14,7 @@ SOURCES += \
     loginwidget.cpp \
     menuwidget.cpp \
     navigationwidget.cpp \
+    order.cpp \
     orderwidget.cpp \
     servercaller.cpp
 
@@ -22,12 +23,14 @@ HEADERS += \
     loginwidget.h \
     menuwidget.h \
     navigationwidget.h \
+    order.h \
     orderwidget.h \
     servercaller.h
 
 FORMS += \
     loginwidget.ui \
     menu.ui \
+    orderDetailsWidget.ui \
     orderwidget.ui
 
 # Default rules for deployment.
