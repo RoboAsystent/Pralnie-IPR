@@ -2,6 +2,7 @@
 #define MENUWIDGET_H
 
 #include <QWidget>
+#include "orderwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MenuWidget; }
@@ -16,8 +17,12 @@ public:
 
 signals:
 
+private slots:
+    void on_List_clicked();
+
 private:
     Ui::MenuWidget *ui;
+    OrderWidget *orders = nullptr;
 };
 
 #endif // MENUWIDGET_H

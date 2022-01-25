@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MenuWidget</class>
- <widget class="QWidget" name="MenuWidget">
+ <class>OrderWidget</class>
+ <widget class="QWidget" name="OrderWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,53 +13,53 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="List">
+  <widget class="QListView" name="listView">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>203</y>
-     <width>191</width>
+     <x>15</x>
+     <y>80</y>
+     <width>371</width>
+     <height>501</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Menu">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>121</width>
      <height>51</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
    <property name="text">
-    <string>Lista zleceń</string>
+    <string>Menu</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="ScanSack">
+  <widget class="QPushButton" name="Prev">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>280</y>
-     <width>191</width>
-     <height>61</height>
+     <x>20</x>
+     <y>593</y>
+     <width>101</width>
+     <height>31</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
    <property name="text">
-    <string>Zeskanuj kod worka</string>
+    <string>Wstecz</string>
    </property>
   </widget>
-  <widget class="QLabel" name="LogedAs">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>381</width>
+     <x>20</x>
+     <y>20</y>
+     <width>231</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Zalogowany jako: </string>
+    <string/>
    </property>
   </widget>
  </widget>
