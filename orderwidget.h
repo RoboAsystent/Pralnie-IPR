@@ -2,12 +2,14 @@
 #define ORDERWIDGET_H
 
 #include "navigationwidget.h"
+#include "orderlist.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class OrderWidget; }
 QT_END_NAMESPACE
 
 class NavigationWidget;
+class OrderList;
 
 class OrderWidget : public NavigationWidget
 {
@@ -25,6 +27,7 @@ private slots:
 
 private:
     Ui::OrderWidget *ui;
+    OrderList *list = nullptr;
 };
 
 #endif // ORDERWIDGET_H

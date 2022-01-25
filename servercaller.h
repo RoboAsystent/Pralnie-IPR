@@ -12,11 +12,14 @@ class ServerCaller : public QObject
 public:
     explicit ServerCaller(QObject *parent = nullptr);
     virtual ~ServerCaller();
+
     void doAuthorize(QString username, QString password);
+    void readOrders();
 
 signals:
     void checkIfValidUser(QString username, QString password);
     void AuthorizationCompleted(int result);
+    void readOrdersFinished();
 
 public slots:
     void userIsValid(bool state);

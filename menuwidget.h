@@ -4,6 +4,8 @@
 #include <QWidget>
 #include "orderwidget.h"
 
+class OrderWidget;
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MenuWidget; }
 QT_END_NAMESPACE

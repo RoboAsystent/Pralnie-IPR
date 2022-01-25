@@ -3,7 +3,8 @@
 #include <QDebug>
 
 OrderWidget::OrderWidget(NavigationWidget *parent) : NavigationWidget(parent)
-  , ui(new Ui::OrderWidget)
+  , ui(new Ui::OrderWidget),
+    list(new OrderList)
 {
     ui->setupUi(this);
     this->setAttribute(Qt::WA_DeleteOnClose);
