@@ -15,6 +15,7 @@ SOURCES += \
     menuwidget.cpp \
     navigationwidget.cpp \
     order.cpp \
+    orderlist.cpp \
     orderwidget.cpp \
     servercaller.cpp
 
@@ -24,6 +25,7 @@ HEADERS += \
     menuwidget.h \
     navigationwidget.h \
     order.h \
+    orderlist.h \
     orderwidget.h \
     servercaller.h
 
@@ -31,7 +33,9 @@ FORMS += \
     loginwidget.ui \
     menu.ui \
     orderDetailsWidget.ui \
-    orderwidget.ui
+    orderwidget.ui \
+    orderDetailsWidget.ui
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

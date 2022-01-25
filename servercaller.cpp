@@ -22,6 +22,11 @@ void ServerCaller::doAuthorize(QString username, QString password)
     emit checkIfValidUser(username, password);
 }
 
+void ServerCaller::readOrders()
+{
+
+}
+
 void ServerCaller::userIsValid(bool state)
 {
     if (state)

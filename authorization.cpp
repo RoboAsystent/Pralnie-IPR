@@ -1,6 +1,6 @@
 #include "authorization.h"
 
-const int token = 0;
+const int token = 1;
 
 Authorization::Authorization(QObject *parent) : QObject(parent)
 {
