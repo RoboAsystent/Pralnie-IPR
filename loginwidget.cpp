@@ -16,19 +16,15 @@ LoginWidget::LoginWidget(QWidget *parent)
 
     this->setAttribute(Qt::WA_DeleteOnClose);
 
-    s_caller = new ServerCaller;
+    QObject::connect(&ServerCaller::getServerCaller(), &ServerCaller::AuthorizationCompleted, this, &LoginWidget::onAuthorizationResult);
 
-    QObject::connect(s_caller, &ServerCaller::AuthorizationCompleted, this, &LoginWidget::onAuthorizationResult);
-
-    s_caller->doAuthorize("","");
+    ServerCaller::getServerCaller().doAuthorize("","");
 }
 
 LoginWidget::~LoginWidget()
 {
     qDebug() << "Teraz jest ten destruktor...";
     delete ui;
-    if (s_caller)
-        s_caller->deleteLater();
 }
 
 void LoginWidget::onAuthorizationResult(int result)
@@ -49,28 +45,17 @@ void LoginWidget::onAuthorizationResult(int result)
         qDebug() << result;
     }
 
-    QObject::disconnect(s_caller, &ServerCaller::AuthorizationCompleted, this, &LoginWidget::onAuthorizationResult);
-    delete s_caller;
-    s_caller = nullptr;
+    QObject::disconnect(&ServerCaller::getServerCaller(), &ServerCaller::AuthorizationCompleted, this, &LoginWidget::onAuthorizationResult);
 }
 
 
 void LoginWidget::on_LogIn_clicked()
 {
-    if (!s_caller)
-    {
-        s_caller = new ServerCaller;
+    QObject::connect(&ServerCaller::getServerCaller(), &ServerCaller::AuthorizationCompleted, this, &LoginWidget::onAuthorizationResult);
 
-        QObject::connect(s_caller, &ServerCaller::AuthorizationCompleted, this, &LoginWidget::onAuthorizationResult);
+    QString username = ui->UserName->text();
+    QString password = ui->Password->text();
 
-        QString username = ui->UserName->text();
-        QString password = ui->Password->text();
-
-        s_caller->doAuthorize(username, password);
-    }
-    else
-    {
-        qDebug() << "Autoryzacja w toku, czekaj";
-    }
+    ServerCaller::getServerCaller().doAuthorize(username, password);
 }
 

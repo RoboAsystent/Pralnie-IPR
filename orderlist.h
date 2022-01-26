@@ -15,7 +15,6 @@ public slots:
     void getData();
 
 private:
-    ServerCaller *caller = nullptr;
 };
 
 #endif // ORDERLIST_H

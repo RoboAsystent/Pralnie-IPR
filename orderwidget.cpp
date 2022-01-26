@@ -8,6 +8,9 @@ OrderWidget::OrderWidget(NavigationWidget *parent) : NavigationWidget(parent)
 {
     ui->setupUi(this);
     this->setAttribute(Qt::WA_DeleteOnClose);
+
+    //wysyłanie zapytania przez listę na temat zleceń
+
 }
 
 OrderWidget::~OrderWidget()

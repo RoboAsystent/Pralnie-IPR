@@ -2,6 +2,7 @@
 #define SERVERCALLER_H
 
 #include <QObject>
+#include <QJsonDocument>
 #include "authorization.h"
 
 class Authorization;
@@ -10,16 +11,14 @@ class ServerCaller : public QObject
 {
     Q_OBJECT
 public:
-    explicit ServerCaller(QObject *parent = nullptr);
-    virtual ~ServerCaller();
-
+    static ServerCaller &getServerCaller();
     void doAuthorize(QString username, QString password);
     void readOrders();
 
 signals:
     void checkIfValidUser(QString username, QString password);
     void AuthorizationCompleted(int result);
-    void readOrdersFinished();
+    void readOrdersFinished(const QJsonDocument &doc);
 
 public slots:
     void userIsValid(bool state);
@@ -27,6 +26,14 @@ public slots:
 
 private:
     Authorization *auth = nullptr;
+    explicit ServerCaller(QObject *parent = nullptr);
+    virtual ~ServerCaller();
 };
+
+inline ServerCaller &ServerCaller::getServerCaller()
+{
+    static ServerCaller caller;
+    return caller;
+}
 
 #endif // SERVERCALLER_H

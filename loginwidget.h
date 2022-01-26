@@ -27,6 +27,5 @@ private slots:
 
 private:
     Ui::LoginWidget *ui;
-    ServerCaller *s_caller = nullptr;
 };
 #endif // LOGINWIDGET_H
