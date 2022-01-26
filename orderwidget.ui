@@ -13,16 +13,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QListView" name="listView">
-   <property name="geometry">
-    <rect>
-     <x>15</x>
-     <y>80</y>
-     <width>371</width>
-     <height>501</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="Menu">
    <property name="geometry">
     <rect>
@@ -60,6 +50,16 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableOrders">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>71</y>
+     <width>361</width>
+     <height>511</height>
+    </rect>
    </property>
   </widget>
  </widget>

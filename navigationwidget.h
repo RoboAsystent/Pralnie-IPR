@@ -10,8 +10,8 @@ public:
     explicit NavigationWidget(QWidget *parent = nullptr);
     virtual ~NavigationWidget();
 
-    void setPrev(QWidget *widget);
-    QWidget *getPrev();
+    void setParent(NavigationWidget *widget);
+    NavigationWidget *getParent();
 
     void setRoot(QWidget *widget);
     QWidget *getRoot();
@@ -22,9 +22,18 @@ public:
     void setCredentials(const QString _cred);
     QString getCredentials();
 
+    bool HasChildren();
+
+    void deleteChildren();
+    void deleteParent();
+
+    void appendChild(NavigationWidget *widget);
+    void removeChild(NavigationWidget *widget);
+
 private:
-    QWidget *prev = nullptr;
+    NavigationWidget *parent = nullptr;
     QWidget *root = nullptr;
+    QVector <NavigationWidget*> children;
 
     QString cred;
 

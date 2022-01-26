@@ -7,17 +7,17 @@ NavigationWidget::NavigationWidget(QWidget *parent) : QWidget(parent)
 
 NavigationWidget::~NavigationWidget()
 {
-    qDebug() << "Destruktor z gory";
+    qDebug() << "Destruktor navigation widget...";
 }
 
-void NavigationWidget::setPrev(QWidget *widget)
+void NavigationWidget::setParent(NavigationWidget *widget)
 {
-    prev = widget;
+    parent = widget;
 }
 
-QWidget *NavigationWidget::getPrev()
+NavigationWidget *NavigationWidget::getParent()
 {
-    return prev;
+    return parent;
 }
 
 void NavigationWidget::setRoot(QWidget *widget)
@@ -32,10 +32,18 @@ QWidget *NavigationWidget::getRoot()
 
 void NavigationWidget::goBack()
 {
-    if (prev)
+    if (parent)
     {
-        prev->show();
-        this->hide();
+        parent->show();
+        parent->removeChild(this);
+        deleteChildren();
+        this->deleteLater();
+    }
+    else
+    {
+        root->show();
+        deleteChildren();
+        this->deleteLater();
     }
 }
 
@@ -44,7 +52,9 @@ void NavigationWidget::goToRoot()
     if (root)
     {
         root->show();
-        this->hide();
+        deleteChildren();
+        deleteParent();
+        this->deleteLater();
     }
 }
 
@@ -56,4 +66,39 @@ void NavigationWidget::setCredentials(const QString _cred)
 QString NavigationWidget::getCredentials()
 {
     return cred;
+}
+
+bool NavigationWidget::HasChildren()
+{
+    return children.size() ? true : false;
+}
+
+void NavigationWidget::deleteChildren()
+{
+    if (!HasChildren())
+        return;
+
+    for (auto child : children)
+    {
+        child->deleteChildren();
+        child->deleteLater();
+    }
+}
+
+void NavigationWidget::deleteParent()
+{
+    if (getParent())
+    {
+        getParent()->deleteLater();
+    }
+}
+
+void NavigationWidget::appendChild(NavigationWidget*widget)
+{
+    children.push_back(widget);
+}
+
+void NavigationWidget::removeChild(NavigationWidget *widget)
+{
+    children.removeOne(widget);
 }

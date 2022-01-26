@@ -25,6 +25,8 @@ private slots:
 
     void on_Menu_clicked();
 
+    void on_tableOrders_cellClicked(int row, int column);
+
 private:
     Ui::OrderWidget *ui;
     OrderList *list = nullptr;

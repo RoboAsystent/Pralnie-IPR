@@ -15,23 +15,15 @@ MenuWidget::MenuWidget(QWidget *parent) : QWidget(parent),
 
 MenuWidget::~MenuWidget()
 {
-    qDebug() << "Robie ten destruktor";
+    qDebug() << "Destruktor menu...";
     delete ui;
 }
 
 void MenuWidget::on_List_clicked()
 {
-    if (orders)
-    {
-        this->hide();
-        orders->show();
-        return;
-    }
-
     this->hide();
     orders = new OrderWidget;
     orders->setRoot(this);
-    orders->setPrev(this);
     orders->setCredentials(ui->LogedAs->text());
     orders->setHeader();
     orders->show();

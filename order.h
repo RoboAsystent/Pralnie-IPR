@@ -3,10 +3,21 @@
 
 #include <QObject>
 
-class order
+class Order
 {
 public:
-    order();
+    explicit Order();
+    explicit Order(int id, QString street, QString target);
+    virtual ~Order();
+
+    int getId();
+    QString getStreet();
+    QString getTarget();
+
+private:
+    int id;
+    QString target;
+    QString street;
 };
 
 #endif // ORDER_H

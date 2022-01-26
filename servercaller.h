@@ -13,7 +13,6 @@ class ServerCaller : public QObject
 public:
     static ServerCaller &getServerCaller();
     void doAuthorize(QString username, QString password);
-    void readOrders();
 
 signals:
     void checkIfValidUser(QString username, QString password);
@@ -22,7 +21,7 @@ signals:
 
 public slots:
     void userIsValid(bool state);
-
+    void readOrders();
 
 private:
     Authorization *auth = nullptr;
