@@ -12,9 +12,9 @@ SOURCES += \
     authorization.cpp \
     main.cpp \
     loginwidget.cpp \
+    mapwidget.cpp \
     menuwidget.cpp \
     navigationwidget.cpp \
-    order.cpp \
     orderlist.cpp \
     orderwidget.cpp \
     servercaller.cpp
@@ -22,22 +22,40 @@ SOURCES += \
 HEADERS += \
     authorization.h \
     loginwidget.h \
+    mapwidget.h \
     menuwidget.h \
     navigationwidget.h \
-    order.h \
     orderlist.h \
     orderwidget.h \
     servercaller.h
 
 FORMS += \
     loginwidget.ui \
+    mapwidget.ui \
     menu.ui \
-    orderDetailsWidget.ui \
-    orderwidget.ui \
-    orderDetailsWidget.ui
+    orderdetailswidget.ui \
+    orderdetailswidget.ui \
+    orderwidget.ui
 
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+
+FORMS += \
+    loginwidget.ui \
+    mapwidget.ui \
+    menu.ui \
+    orderdetailswidget.ui \
+    orderwidget.ui
+
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    LocalData/LocalData.qrc

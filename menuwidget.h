@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "orderwidget.h"
+#include "mapwidget.h"
 
 class OrderWidget;
 
@@ -22,9 +23,13 @@ signals:
 private slots:
     void on_List_clicked();
 
+    void on_ScanSack_clicked();
+
 private:
     Ui::MenuWidget *ui;
     OrderWidget *orders = nullptr;
+
+    MapWidget *map = nullptr;   // TO REMOVE
 };
 
 #endif // MENUWIDGET_H
