@@ -21,15 +21,12 @@ MapWidget::MapWidget(NavigationWidget *parent) : NavigationWidget(parent)
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
-
-
 }
 
 MapWidget::~MapWidget()
 {
     delete ui;
     delete scene;
-
 }
 
 
@@ -41,20 +38,12 @@ void MapWidget::setHeader()
 
 void MapWidget::on_pushButtonBack_clicked()
 {
-    if (getPrev())
-    {
-        this->hide();
-        getPrev()->show();
-    }
+    goBack();
 }
 
 void MapWidget::on_pushButtonMenu_clicked()
 {
-    if (getRoot())
-    {
-        this->hide();
-        getRoot()->show();
-    }
+    goToRoot();
 }
 
 void MapWidget::wheelEvent(QWheelEvent *pWheelEvent)

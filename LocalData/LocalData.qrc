@@ -2,5 +2,7 @@
     <qresource prefix="/map">
         <file>image1.PNG</file>
         <file>image2.PNG</file>
+        <file>QRCode_wiki.png</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

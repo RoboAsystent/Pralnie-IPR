@@ -27,6 +27,8 @@ private slots:
 
     void on_OpenBox_clicked();
 
+    void on_ShowMap_clicked();
+
 private:
     Ui::OrderDetailsWidget *ui;
     Order *my_order;

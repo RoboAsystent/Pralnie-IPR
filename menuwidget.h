@@ -2,8 +2,6 @@
 #define MENUWIDGET_H
 
 #include <QWidget>
-#include "orderwidget.h"
-#include "mapwidget.h"
 
 class OrderWidget;
 
@@ -27,9 +25,6 @@ private slots:
 
 private:
     Ui::MenuWidget *ui;
-    OrderWidget *orders = nullptr;
-
-    MapWidget *map = nullptr;   // TO REMOVE
 };
 
 #endif // MENUWIDGET_H

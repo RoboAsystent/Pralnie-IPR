@@ -1,5 +1,6 @@
 #include "orderdetailswidget.h"
 #include "ui_orderdetailswidget.h"
+#include "mapwidget.h"
 #include "servercaller.h"
 #include <QDebug>
 
@@ -62,5 +63,17 @@ void OrderDetailsWidget::on_OpenBox_clicked()
     int my_X = 10;
     int my_Y = 10;
     ServerCaller::getServerCaller().openBox(my_X, my_Y);
+}
+
+
+void OrderDetailsWidget::on_ShowMap_clicked()
+{
+    auto map = new MapWidget;
+    map->setRoot(this->getRoot());
+    map->setParent(this);
+    map->setCredentials(this->getCredentials());
+    map->setHeader();
+    map->show();
+    this->hide();
 }
 

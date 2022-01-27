@@ -1,5 +1,8 @@
 #include "menuwidget.h"
+#include "orderwidget.h"
 #include "ui_menu.h"
+#include "scanerwidget.h"
+
 #include <QDebug>
 #include <QLabel>
 
@@ -23,7 +26,7 @@ MenuWidget::~MenuWidget()
 void MenuWidget::on_List_clicked()
 {
     this->hide();
-    orders = new OrderWidget;
+    auto orders = new OrderWidget;
     orders->setRoot(this);
     orders->setCredentials(ui->LogedAs->text());
     orders->setHeader();
@@ -33,10 +36,9 @@ void MenuWidget::on_List_clicked()
 
 void MenuWidget::on_ScanSack_clicked()
 {
-    map = new MapWidget;                        // TO REMOVE
-    map->setRoot(this);                         // TO REMOVE
-    map->setPrev(this);                         // TO REMOVE
-    map->setCredentials(ui->LogedAs->text());   // TO REMOVE
-    map->setHeader();                           // TO REMOVE
-    map->show();                                // TO REMOVE
+    this->hide();
+    auto scan_widget = new ScanerWidget();
+    scan_widget->setCredentials(ui->LogedAs->text());
+    scan_widget->setRoot(this);
+    scan_widget->show();
 }
