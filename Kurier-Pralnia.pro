@@ -12,6 +12,7 @@ SOURCES += \
     authorization.cpp \
     main.cpp \
     loginwidget.cpp \
+    map.cpp \
     mapwidget.cpp \
     menuwidget.cpp \
     navigationwidget.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 HEADERS += \
     authorization.h \
     loginwidget.h \
+    map.h \
     mapwidget.h \
     menuwidget.h \
     navigationwidget.h \

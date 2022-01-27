@@ -3,6 +3,7 @@
         <file>image1.PNG</file>
         <file>image2.PNG</file>
         <file>QRCode_wiki.png</file>
+        <file>point.png</file>
     </qresource>
     <qresource prefix="/">
         <file>Zlecenia.json</file>

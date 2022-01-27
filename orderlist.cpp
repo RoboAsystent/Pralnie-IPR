@@ -41,8 +41,10 @@ void OrderList::getData(const QJsonDocument &doc)
         QJsonValue street = obj["street"];
         QJsonValue id = obj["id"];
         QJsonValue target = obj["target"];
+        QJsonValue cor_x = obj["cor_x"];
+        QJsonValue cor_y = obj["cor_y"];
 
-        auto order = new Order(id.toInt(), street.toString(), target.toString());
+        auto order = new Order(id.toInt(), street.toString(), target.toString(), cor_x.toInt(), cor_y.toInt());
         this->orders[id.toInt()] = order;
 
         table->insertRow(table->rowCount());

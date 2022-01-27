@@ -6,27 +6,34 @@
 #include <qmath.h>
 
 
+class Map;
+
 MapWidget::MapWidget(NavigationWidget *parent) : NavigationWidget(parent)
   , ui(new Ui::MapWidget)
 
 
 {
     ui->setupUi(this);
-    QPixmap pix(":/map/image1.PNG");
+    map = new Map;
+    map->setMap(ui->graphicsView);
 
-    scene = new QGraphicsScene(this);
-    scene->addPixmap(pix);
+}
 
-    ui->graphicsView->setScene(scene);
-    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
+MapWidget::MapWidget(QPoint cords) :
+    ui(new Ui::MapWidget)
+{
+    ui->setupUi(this);
+    map = new Map;
+    map->setCords(cords);
+    map->setMap(ui->graphicsView);
+
+
 }
 
 MapWidget::~MapWidget()
 {
     delete ui;
-    delete scene;
+    delete map;
 }
 
 
@@ -53,7 +60,7 @@ void MapWidget::wheelEvent(QWheelEvent *pWheelEvent)
             double angle = pWheelEvent->angleDelta().y();
             double factor = qPow(1.0015, angle);
 
-            auto targetViewportPos = pWheelEvent->pos();
+            auto targetViewportPos = pWheelEvent->position();
             auto targetScenePos = ui->graphicsView->mapToScene(pWheelEvent->pos());
 
             ui->graphicsView->scale(factor, factor);

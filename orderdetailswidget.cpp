@@ -68,7 +68,7 @@ void OrderDetailsWidget::on_OpenBox_clicked()
 
 void OrderDetailsWidget::on_ShowMap_clicked()
 {
-    auto map = new MapWidget;
+    auto map = new MapWidget(my_order->getCords());
     map->setRoot(this->getRoot());
     map->setParent(this);
     map->setCredentials(this->getCredentials());

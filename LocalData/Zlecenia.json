@@ -3,27 +3,37 @@
 	{
 		"id" : 0,
 		"target" : "DoPralni",
-		"street" : "Pilsudskiego"
+                "street" : "Pilsudskiego",
+                "cor_x" : 600,
+                "cor_y" : 250
 	},
 	{
 		"id" : 1,
 		"target" : "DoPralniomatu",
-		"street" : "Jana Huana"
+                "street" : "Jana Huana",
+                "cor_x" : 1500,
+                "cor_y" : 400
 	},
 	{
 		"id" : 2,
 		"target" : "DoPralni",
-		"street" : "Pilsudskiego"
+                "street" : "Pilsudskiego",
+                "cor_x" : 600,
+                "cor_y" : 250
 	},
 	{
 		"id" : 3,
 		"target" : "DoPralniomatu",
-		"street" : "Znacy Ignacy"
+                "street" : "Znacy Ignacy",
+                "cor_x" : 1600,
+                "cor_y" : 500
 	},
 	{
 		"id" : 4,
 		"target" : "DoPralniomatu",
-		"street" : "Panda5"
+                "street" : "Panda5",
+                "cor_x" : 250,
+                "cor_y" : 300
 	}
 ]
 }

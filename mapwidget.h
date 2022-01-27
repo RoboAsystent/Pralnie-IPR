@@ -5,6 +5,7 @@
 #include <QMouseEvent>
 #include <QEvent>
 #include <QGraphicsView>
+#include <map.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MapWidget; }
@@ -17,6 +18,7 @@ class MapWidget : public NavigationWidget
     Q_OBJECT
 public:
     explicit MapWidget(NavigationWidget *parent = nullptr);
+    explicit MapWidget(QPoint cords);
     virtual ~MapWidget();
 
     void setHeader();
@@ -31,9 +33,10 @@ private slots:
 
 private:
     Ui::MapWidget *ui;
-    QGraphicsScene *scene;
 
     void wheelEvent(QWheelEvent* pWheelEvent);
+
+    Map *map;
 };
 
 #endif // MAPWIDGET_H
