@@ -1,5 +1,6 @@
 #include "scanerwidget.h"
 #include "ui_scanerwidget.h"
+#include "scaner.h"
 
 #include <QIcon>
 

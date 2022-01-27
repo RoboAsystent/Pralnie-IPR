@@ -36,7 +36,7 @@ void ServerCaller::readOrders()
     QString val;
     QFile file;
 
-    file.setFileName("D:/Studia/SEMVII/IPR/Pranie/Kurier-Pralnia/LocalData/Zlecenia.json"); //zmienić na prawidłową ścieżkę
+    file.setFileName(":/Zlecenia.json"); //zmienić na prawidłową ścieżkę
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         qDebug() << "Nie można otworzyć jsona!!!";
