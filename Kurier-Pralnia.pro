@@ -12,6 +12,7 @@ SOURCES += \
     authorization.cpp \
     main.cpp \
     loginwidget.cpp \
+    mapwidget.cpp \
     menuwidget.cpp \
     navigationwidget.cpp \
     order.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
 HEADERS += \
     authorization.h \
     loginwidget.h \
+    mapwidget.h \
     menuwidget.h \
     navigationwidget.h \
     order.h \
@@ -33,6 +35,7 @@ HEADERS += \
 
 FORMS += \
     loginwidget.ui \
+    mapwidget.ui \
     menu.ui \
     orderdetailswidget.ui \
     orderwidget.ui
@@ -42,3 +45,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    LocalData/LocalData.qrc

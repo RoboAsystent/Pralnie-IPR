@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QLabel>
 
+
 MenuWidget::MenuWidget(QWidget *parent) : QWidget(parent),
   ui(new Ui::MenuWidget)
 {
@@ -29,3 +30,13 @@ void MenuWidget::on_List_clicked()
     orders->show();
 }
 
+
+void MenuWidget::on_ScanSack_clicked()
+{
+    map = new MapWidget;                        // TO REMOVE
+    map->setRoot(this);                         // TO REMOVE
+    map->setPrev(this);                         // TO REMOVE
+    map->setCredentials(ui->LogedAs->text());   // TO REMOVE
+    map->setHeader();                           // TO REMOVE
+    map->show();                                // TO REMOVE
+}
