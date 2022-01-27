@@ -25,6 +25,8 @@ private slots:
 
     void on_MenuButton_clicked();
 
+    void on_OpenBox_clicked();
+
 private:
     Ui::OrderDetailsWidget *ui;
     Order *my_order;

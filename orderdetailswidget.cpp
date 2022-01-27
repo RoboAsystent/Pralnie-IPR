@@ -1,5 +1,6 @@
 #include "orderdetailswidget.h"
 #include "ui_orderdetailswidget.h"
+#include "servercaller.h"
 #include <QDebug>
 
 OrderDetailsWidget::OrderDetailsWidget() :
@@ -23,13 +24,13 @@ OrderDetailsWidget::OrderDetailsWidget(int type, Order *_order) :
     {
         ui->Submit->setVisible(false);
 
-        if (my_order->getTarget() != "Pralniomat")
+        if (my_order->getTarget() != "DoPralniomatu")
             ui->OpenBox->setVisible(false);
     }
 
     ui->IdLabel->setText("Zamówienie numer: " + QString::number(my_order->getId()));
-    ui->TargetLabel->setText(my_order->getTarget());
-    ui->StreetLabel->setText(my_order->getStreet());
+    ui->TargetLabel->setText("Dostarczyć do: " + my_order->getTarget());
+    ui->StreetLabel->setText("Adres: " + my_order->getStreet());
 }
 
 OrderDetailsWidget::~OrderDetailsWidget()
@@ -53,5 +54,13 @@ void OrderDetailsWidget::on_Back_clicked()
 void OrderDetailsWidget::on_MenuButton_clicked()
 {
     goToRoot();
+}
+
+
+void OrderDetailsWidget::on_OpenBox_clicked()
+{
+    int my_X = 10;
+    int my_Y = 10;
+    ServerCaller::getServerCaller().openBox(my_X, my_Y);
 }
 

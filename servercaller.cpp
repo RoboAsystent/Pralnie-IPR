@@ -1,5 +1,6 @@
 #include "servercaller.h"
 #include <QFile>
+#include <QDebug>
 
 ServerCaller::ServerCaller(QObject *parent) : QObject(parent)
 {
@@ -22,6 +23,11 @@ void ServerCaller::doAuthorize(QString username, QString password)
         QObject::connect(auth, &Authorization::IsUserValid, this, &ServerCaller::userIsValid);
     }
     emit checkIfValidUser(username, password);
+}
+
+void ServerCaller::openBox(int X, int Y)
+{
+    qDebug() << "Otwieram skrytkę na skarpetki paczkomatu o współrzędnych: " + QString::number(X) + ", " + QString::number(Y);
 }
 
 void ServerCaller::readOrders()

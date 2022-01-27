@@ -13,6 +13,7 @@ class ServerCaller : public QObject
 public:
     static ServerCaller &getServerCaller();
     void doAuthorize(QString username, QString password);
+    void openBox(int X, int Y);
 
 signals:
     void checkIfValidUser(QString username, QString password);
