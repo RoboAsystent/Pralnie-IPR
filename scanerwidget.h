@@ -2,8 +2,10 @@
 #define SCANERWIDGET_H
 
 #include "navigationwidget.h"
+#include "scaner.h"
 
 class NavigationWidget;
+class Scaner;
 
 namespace Ui {
     class ScannerWidget;
@@ -23,6 +25,7 @@ private slots:
 
 private:
    Ui::ScannerWidget *ui;
+   Scaner scaner;
 };
 
 #endif // SCANERWIDGET_H
